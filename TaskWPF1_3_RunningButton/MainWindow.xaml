@@ -1,0 +1,25 @@
+﻿<Window x:Class="TaskWPF1_3_RunningButton.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskWPF1_3_RunningButton"
+        mc:Ignorable="d"
+        Name ="Borders"
+        Title="Убегающая кнопка" Height="450" Width="800">
+    <Grid>
+        <Button Content="Поймай меня!"
+                Name ="RunningButton"
+                Margin="303,157,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" 
+                Background="#FF45652B" 
+                FontSize="16" 
+                FontWeight="Bold" 
+                Foreground="#FFE6D6D6"
+                Width="150"
+                Height="75" 
+                MouseEnter="RunningButton_MouseEnter"/>
+
+    </Grid>
+</Window>
