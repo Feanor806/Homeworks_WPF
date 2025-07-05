@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36221.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF1_1_Clicker", "TaskWPF1_1_Clicker\TaskWPF1_1_Clicker.csproj", "{1F404312-E4A0-4D3D-8513-ACCAA62CAAF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF2_1_TextRedactor", "TaskWPF2_1_TextRedactor\TaskWPF2_1_TextRedactor.csproj", "{C829E2D4-7AB5-403D-817F-C19EE6907F47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1F404312-E4A0-4D3D-8513-ACCAA62CAAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F404312-E4A0-4D3D-8513-ACCAA62CAAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F404312-E4A0-4D3D-8513-ACCAA62CAAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C829E2D4-7AB5-403D-817F-C19EE6907F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C829E2D4-7AB5-403D-817F-C19EE6907F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C829E2D4-7AB5-403D-817F-C19EE6907F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C829E2D4-7AB5-403D-817F-C19EE6907F47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
