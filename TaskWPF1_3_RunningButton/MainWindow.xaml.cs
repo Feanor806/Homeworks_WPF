@@ -9,7 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TaskWPF1_1_Clicker
+namespace TaskWPF1_3_RunningButton
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -21,11 +21,17 @@ namespace TaskWPF1_1_Clicker
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RunningButton_MouseEnter(object sender, MouseEventArgs e)
         {
-            int clicks = Convert.ToInt32(Clicks.Text);
-            clicks++;
-            Clicks.Text = clicks.ToString();
+            int maxHeightMargin = (int)Borders.Height - 105;
+            int maxWidthMargin = (int)Borders.Width - 180;
+
+            Random rnd = new Random();
+
+            int newHeightMargin = rnd.Next(0, maxHeightMargin);
+            int newWidthMargin = rnd.Next(0, maxWidthMargin);
+
+            RunningButton.Margin = new Thickness(newWidthMargin, newHeightMargin,0,0);
         }
     }
 }
