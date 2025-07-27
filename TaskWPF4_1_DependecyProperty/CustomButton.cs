@@ -36,7 +36,7 @@ namespace TaskWPF4_1_DependecyProperty
             var button = (CustomButton)d;
             bool newValue = (bool)e.NewValue;
 
-            button.Content = newValue == true ? "ON" : "False";
+            button.Content = newValue == true ? "ON" : "OFF";
             button.Background = newValue == true ? new SolidColorBrush(Color.FromRgb(0, 255, 0)) : new SolidColorBrush(Color.FromRgb(255, 0, 0));
         }
 
