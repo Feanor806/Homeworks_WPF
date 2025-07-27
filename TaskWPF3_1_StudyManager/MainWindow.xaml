@@ -5,38 +5,92 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaskWPF3_1_StudyManager"
         mc:Ignorable="d"
-        Title="Выбор курса" Height="450" Width="800">
+        Title="Выбор курса" MinHeight="600" MinWidth="350" 
+        MaxHeight="600" MaxWidth="350" 
+        Height="600" Width="350">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" MinHeight="120"/>
+            <RowDefinition Height="0.5*" MinHeight="120"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <StackPanel Margin="10" Grid.Row="0" >
+        <StackPanel Margin="10,10,10,5" 
+                    Grid.Row="0" >
             <Label Content="Имя студента:"/>
             <TextBox x:Name="studentName"/>
             <Label Content="Факультет:"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <ComboBox x:Name="faculty" Grid.Column="0" IsEditable="True" SelectedIndex="-1">
-                    <ComboBoxItem>Программирование</ComboBoxItem>
-                    <ComboBoxItem>Строительство</ComboBoxItem>
-                    <ComboBoxItem>Теплогазоснабжение и вентиляция</ComboBoxItem>
-                </ComboBox>
-                <Button x:Name="refreshCourses" Grid.Column="1" Content="Обновить курсы" Click="refreshCourses_Click"/>
-            </Grid>
+            <ComboBox x:Name="faculty" 
+          Grid.Column="0" 
+          IsEditable="True" 
+          SelectedIndex="-1"
+          MouseLeave="faculty_MouseLeave">
+                <ComboBoxItem>Программирование</ComboBoxItem>
+                <ComboBoxItem>Строительство</ComboBoxItem>
+                <ComboBoxItem>Теплогазоснабжение и вентиляция</ComboBoxItem>
+            </ComboBox>
         </StackPanel>
-        <Grid Grid.Row="1" Margin="10">
+        <Grid Grid.Row="1" 
+              Margin="10,0,10,5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Content="Доступные курсы:" Grid.Row="0"/>
-            <ListBox x:Name ="courses" SelectionMode="Single" Grid.Row="1"/>
+            <Label Content="Доступные курсы:" 
+                   Grid.Row="0"/>
+            <ListBox x:Name ="courses" 
+                     SelectionMode="Multiple" 
+                     Grid.Row="1"/>
         </Grid>
+        <StackPanel Margin="10,5" 
+                    Grid.Row="2">
+            <Label Content="Форма обучения:"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <RadioButton x:Name ="fullTime" 
+                             GroupName="EduForm" 
+                             Content="Очная" 
+                             Grid.Column="0" 
+                             HorizontalAlignment="Center"
+                             IsChecked="True"/>
+                <RadioButton x:Name ="correspondence"
+                             GroupName="EduForm" 
+                             Content="Заочная" 
+                             Grid.Column="1" 
+                             HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Число часов в неделю:" 
+                       Grid.Column="0"/>
+                <TextBlock x:Name="hours"
+                           Grid.Column="1"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="1"/>
+            </Grid>
+            <Slider x:Name="EduHours"
+                    Minimum="1"
+                    Maximum="10"
+                    Value="1"
+                    TickFrequency="1"
+                    TickPlacement="TopLeft"
+                    IsSnapToTickEnabled="True" 
+                    ValueChanged="EduHours_ValueChanged">
+                <Slider.Ticks>
+                    <DoubleCollection>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</DoubleCollection>
+                </Slider.Ticks>
+            </Slider>
+            <CheckBox x:Name="approval"  
+                      Margin="10,5"
+                      Content="Согласие на обработку данных"/>
+            <Button x:Name="next"
+                    Content="Запись на курсы" Click="next_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
