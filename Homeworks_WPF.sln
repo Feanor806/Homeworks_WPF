@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36221.1 d17.14
+VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF1_1_Clicker", "TaskWPF1_1_Clicker\TaskWPF1_1_Clicker.csproj", "{1F404312-E4A0-4D3D-8513-ACCAA62CAAF4}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF1_2_TrafficLights", "TaskWPF1_2_TrafficLights\TaskWPF1_2_TrafficLights.csproj", "{5BFE272E-78EA-48D6-9B3A-DCFCD5BCF795}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF1_3_RunningButton", "TaskWPF1_3_RunningButton\TaskWPF1_3_RunningButton.csproj", "{0F28E7C7-16CD-4EAC-A367-91658D9B18ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF6_1_TextLength", "TaskWPF6_1_TextLength\TaskWPF6_1_TextLength.csproj", "{AAF164A2-9B47-45B1-BAB8-C9021138B847}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{0F28E7C7-16CD-4EAC-A367-91658D9B18ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F28E7C7-16CD-4EAC-A367-91658D9B18ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F28E7C7-16CD-4EAC-A367-91658D9B18ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF164A2-9B47-45B1-BAB8-C9021138B847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF164A2-9B47-45B1-BAB8-C9021138B847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF164A2-9B47-45B1-BAB8-C9021138B847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF164A2-9B47-45B1-BAB8-C9021138B847}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
