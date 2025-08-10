@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF1_2_TrafficLights", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF1_3_RunningButton", "TaskWPF1_3_RunningButton\TaskWPF1_3_RunningButton.csproj", "{0F28E7C7-16CD-4EAC-A367-91658D9B18ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF6_1_TextLength", "TaskWPF6_1_TextLength\TaskWPF6_1_TextLength.csproj", "{AAF164A2-9B47-45B1-BAB8-C9021138B847}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task5_1_StylesTriggers", "Task5_1_StylesTriggers\Task5_1_StylesTriggers.csproj", "{75E59A8D-C5A0-41AA-A214-AC6084E277F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWPF4_1_DependecyProperty", "TaskWPF4_1_DependecyProperty\TaskWPF4_1_DependecyProperty.csproj", "{8581761E-D7A2-400C-87FF-CD937D70562F}"
@@ -39,6 +41,10 @@ Global
 		{0F28E7C7-16CD-4EAC-A367-91658D9B18ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F28E7C7-16CD-4EAC-A367-91658D9B18ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F28E7C7-16CD-4EAC-A367-91658D9B18ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF164A2-9B47-45B1-BAB8-C9021138B847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF164A2-9B47-45B1-BAB8-C9021138B847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF164A2-9B47-45B1-BAB8-C9021138B847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF164A2-9B47-45B1-BAB8-C9021138B847}.Release|Any CPU.Build.0 = Release|Any CPU
 		{75E59A8D-C5A0-41AA-A214-AC6084E277F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{75E59A8D-C5A0-41AA-A214-AC6084E277F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75E59A8D-C5A0-41AA-A214-AC6084E277F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
