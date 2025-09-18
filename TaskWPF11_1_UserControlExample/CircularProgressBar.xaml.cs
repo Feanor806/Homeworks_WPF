@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,6 +27,22 @@ namespace TaskWPF11_1_UserControlExample
                 typeof(double),
                 typeof(CircularProgressBar),
                 new PropertyMetadata(0.0, OnValueChanged));
+
+        //Конечная точка дуги прогресса
+        public static readonly DependencyProperty ProgressEndPointProperty =
+            DependencyProperty.Register(
+                nameof(ProgressEndPoint),
+                typeof(Point), 
+                typeof(CircularProgressBar),
+                new PropertyMetadata(new Point(50, 95)));
+
+        //Флаг определения дуги - до середины круга малая дуга, после - большая.
+        public static readonly DependencyProperty IsLargeArcProperty =
+             DependencyProperty.Register(
+                 nameof(IsLargeArc), 
+                 typeof(bool), 
+                 typeof(CircularProgressBar),
+                 new PropertyMetadata(false));
 
         public static readonly DependencyProperty MaximumProperty =
             DependencyProperty.Register(
@@ -59,6 +76,17 @@ namespace TaskWPF11_1_UserControlExample
             set => SetValue(ValueProperty, value);
         }
 
+        public Point ProgressEndPoint
+        {
+            get => (Point)GetValue(ProgressEndPointProperty);
+            set => SetValue(ProgressEndPointProperty, value);
+        }
+        public bool IsLargeArc
+        {
+            get => (bool)GetValue(IsLargeArcProperty);
+            set => SetValue(IsLargeArcProperty, value);
+        }
+
         public double Maximum
         {
             get => (double)GetValue(MaximumProperty);
@@ -80,26 +108,49 @@ namespace TaskWPF11_1_UserControlExample
         public CircularProgressBar()
         {
             InitializeComponent();
-            UpdateProgress();
+            UpdateProgressGeometry();
         }
 
         private static void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var progressBar = (CircularProgressBar)d;
-            progressBar.UpdateProgress();
+            progressBar.UpdateProgressGeometry();
         }
 
-        private void UpdateProgress()
+        private void UpdateProgressGeometry()
         {
-            // Ограничиваем значения
-            if (Value < 0) Value = 0;
-            if (Value > Maximum) Value = Maximum;
-            if (Maximum <= 0) Maximum = 100;
-
             // Вычисляем прогресс
             double percentage = Maximum == 0 ? 0 : (Value / Maximum);
-            ProgressAngle = 360 * percentage;
+            double angle = 360 * percentage==360?359:360 * percentage;
+            ProgressAngle = angle;
             PercentageText = $"{(percentage * 100):F0}%";
+
+            // Параметры круга
+            double centerX = 50;
+            double centerY = 50;
+            double radius = 45;
+
+            // Начинаем с нижней точки (90°)
+            double startAngle = 90;
+
+            // Конечный угол = начальный + прогресс по часовой стрелке
+            double endAngle = startAngle + angle;
+
+            // Нормализуем угол
+            endAngle %= 360;
+            if (endAngle < 0) endAngle += 360;
+
+            // Конвертируем в радианы
+            double endRadians = endAngle * Math.PI / 180;
+
+            // Вычисляем координаты (в WPF: cos для X, sin для Y)
+            double x = centerX + radius * Math.Cos(endRadians);
+            double y = centerY + radius * Math.Sin(endRadians);
+
+            ProgressEndPoint = new Point(x, y);
+
+            // Правильное определение большой/малой дуги
+            IsLargeArc = angle > 180;
         }
     }
 }

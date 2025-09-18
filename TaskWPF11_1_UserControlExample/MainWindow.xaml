@@ -17,7 +17,7 @@
         <!-- Слайдер для управления -->
         <Slider x:Name="Slider"
                 Minimum="0" Maximum="100"
-                Value="50"
+                Value="0"
                 Width="200" Margin="10"/>
 
         <TextBlock Text="{Binding ElementName=ProgressBar, Path=Value, StringFormat={}Текущее значение: {0:N2}}"
